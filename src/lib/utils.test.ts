@@ -20,12 +20,12 @@ function textFile(name: string, text: string, size?: number): File {
 
 describe('public product configuration', () => {
   it('formats VND without decimal places', () => {
-    expect(formatCurrency(49_000).replace(/\s/gu, ' ')).toBe('49.000 ₫')
+    expect(formatCurrency(10_000).replace(/\s/gu, ' ')).toBe('10.000 ₫')
   })
   it.each([undefined, '', '0', '-1', 'abc', 'Infinity', '4.5', '100000001'])(
     'uses the sample price for invalid value %s',
     (value) => {
-      expect(parsePrice(value)).toBe(49_000)
+      expect(parsePrice(value)).toBe(10_000)
     },
   )
   it('accepts a positive integer price', () => expect(parsePrice('79000')).toBe(79_000))

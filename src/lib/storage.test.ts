@@ -13,7 +13,7 @@ const draft: OrderDraft = {
   id: 'VK-12345678',
   createdAt: '2026-09-05T12:00:00.000Z',
   plan: 'Creator 10K',
-  price: 49000,
+  price: 10000,
   credits: 10000,
   periodMonths: 1,
   status: 'draft',
@@ -84,6 +84,6 @@ describe('local draft history', () => {
     expect(summary).toContain('Chưa thanh toán')
     expect(summary).toContain('Chưa cấp API key')
     expect(summary).toContain('10.000')
-    expect(summary).toContain('49.000 VND')
+    expect(summary).toContain('10.000 VND')
   })
 })

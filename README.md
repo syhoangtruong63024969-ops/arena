@@ -2,7 +2,7 @@
 
 Giao diện cửa hàng tiếng Việt cho gói **ElevenLabs API · 10.000 credits · 1 tháng**, được xây dựng bằng React, TypeScript và Vite. Phong cách sáng, điểm nhấn terracotta, minh họa sóng âm 3D và chuyển động nhẹ nhàng.
 
-> **Trạng thái mặc định: bản xem trước.** Giá **49.000đ/tháng là giá minh họa**, không phải giá đã được người bán xác nhận. Website chưa thu tiền, chưa gửi email, chưa cấp API key và không đại diện cho ElevenLabs. Voice Studio dùng giọng đọc của trình duyệt, không gọi API ElevenLabs.
+> **Trạng thái mặc định: bản xem trước.** Giá **10.000đ/tháng là giá minh họa**, không phải giá đã được người bán xác nhận. Website chưa thu tiền, chưa gửi email, chưa cấp API key và không đại diện cho ElevenLabs. Voice Studio dùng giọng đọc của trình duyệt, không gọi API ElevenLabs.
 
 ## Đã có những gì?
 
@@ -42,7 +42,7 @@ cp .env.example .env
 
 | Biến                  | Mặc định | Ý nghĩa                                                                                                                       |
 | --------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `VITE_PLAN_PRICE_VND` | `49000`  | Giá nguyên dương bằng VND. Giá lỗi sẽ trở về giá mẫu.                                                                         |
+| `VITE_PLAN_PRICE_VND` | `10000`  | Giá nguyên dương bằng VND. Giá lỗi sẽ trở về giá mẫu.                                                                         |
 | `VITE_CHECKOUT_URL`   | trống    | URL **HTTPS** của trang thanh toán bên ngoài đã được cấu hình. Không nhận URL HTTP, JavaScript hay URL kèm username/password. |
 | `VITE_SUPPORT_EMAIL`  | trống    | Email hỗ trợ công khai, hiển thị trong cửa sổ hỗ trợ.                                                                         |
 | `BASE_PATH`           | `/`      | Đường dẫn public khi build; dùng `/arena/` nếu triển khai dưới GitHub Pages của repo này.                                     |
