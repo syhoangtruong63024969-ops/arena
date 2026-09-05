@@ -35,7 +35,7 @@ export function validHttpsUrl(value: string | undefined): string | null {
 
 export function parsePrice(value: string | undefined) {
   const price = Number(value)
-  return Number.isSafeInteger(price) && price > 0 && price <= 100_000_000 ? price : 49_000
+  return Number.isSafeInteger(price) && price > 0 && price <= 100_000_000 ? price : 10_000
 }
 
 export function isValidEmail(value: string) {

@@ -2,7 +2,7 @@
 
 Giao diện cửa hàng tiếng Việt cho gói **ElevenLabs API · 10.000 credits · 1 tháng**, được xây dựng bằng React, TypeScript và Vite. Phong cách sáng, điểm nhấn terracotta, minh họa sóng âm 3D và chuyển động nhẹ nhàng.
 
-> **Trạng thái mặc định: bản xem trước.** Giá **49.000đ/tháng là giá minh họa**, không phải giá đã được người bán xác nhận. Website chưa thu tiền, chưa gửi email, chưa cấp API key và không đại diện cho ElevenLabs. Voice Studio dùng giọng đọc của trình duyệt, không gọi API ElevenLabs.
+> **Trạng thái mặc định: bản xem trước.** Giá **10.000đ/tháng là giá minh họa**, không phải giá đã được người bán xác nhận. Website chưa thu tiền, chưa gửi email, chưa cấp API key và không đại diện cho ElevenLabs. Voice Studio dùng giọng đọc của trình duyệt, không gọi API ElevenLabs.
 
 ## Đã có những gì?
 
@@ -42,7 +42,7 @@ cp .env.example .env
 
 | Biến                  | Mặc định | Ý nghĩa                                                                                                                       |
 | --------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `VITE_PLAN_PRICE_VND` | `49000`  | Giá nguyên dương bằng VND. Giá lỗi sẽ trở về giá mẫu.                                                                         |
+| `VITE_PLAN_PRICE_VND` | `10000`  | Giá nguyên dương bằng VND. Giá lỗi sẽ trở về giá mẫu.                                                                         |
 | `VITE_CHECKOUT_URL`   | trống    | URL **HTTPS** của trang thanh toán bên ngoài đã được cấu hình. Không nhận URL HTTP, JavaScript hay URL kèm username/password. |
 | `VITE_SUPPORT_EMAIL`  | trống    | Email hỗ trợ công khai, hiển thị trong cửa sổ hỗ trợ.                                                                         |
 | `BASE_PATH`           | `/`      | Đường dẫn public khi build; dùng `/arena/` nếu triển khai dưới GitHub Pages của repo này.                                     |
@@ -98,13 +98,12 @@ Mã nguồn làm việc trên nhánh **`arena/01a07244-arena`** của repo này.
 
 ### GitHub Pages (tùy chọn)
 
-Đã có workflow thủ công `.github/workflows/pages.yml`. **Có workflow không có nghĩa website đã được public.** Để xuất bản:
+Đã có workflow `.github/workflows/pages.yml` (tự chạy khi đẩy vào `main`, hoặc chạy thủ công). **Có workflow không có nghĩa website đã được public.** Để xuất bản:
 
-1. Merge pull request để workflow nằm trên nhánh mặc định `main`.
-2. Vào **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Nếu cần, đặt các biến cấu hình công khai tại **Settings → Secrets and variables → Actions → Variables**. Không đặt API key ElevenLabs vào các biến Vite.
-4. Vào **Actions → Deploy Voicekey to GitHub Pages → Run workflow** trên `main`.
-5. Workflow build với `BASE_PATH=/arena/` và hiển thị URL website sau khi deploy thành công.
+1. Vào **Settings → Pages → Build and deployment → Source: GitHub Actions** (chỉ làm một lần).
+2. Nếu cần, đặt các biến cấu hình công khai tại **Settings → Secrets and variables → Actions → Variables**. Không đặt API key ElevenLabs vào các biến Vite.
+3. Merge pull request vào `main` — workflow tự động build và deploy; hoặc vào **Actions → Deploy Voicekey to GitHub Pages → Run workflow** trên `main`.
+4. Workflow build với `BASE_PATH=/arena/` và hiển thị URL website sau khi deploy thành công.
 
 GitHub Pages chỉ host frontend tĩnh; không chạy backend thanh toán/cấp key. Có thể triển khai thư mục `dist/` lên Vercel, Netlify hoặc static hosting khác với `BASE_PATH=/` cho tên miền gốc. Luôn dùng HTTPS để clipboard và các tính năng trình duyệt hoạt động phù hợp.
 
@@ -122,7 +121,7 @@ public/
   images/           Minh họa sóng âm WebP
   favicon.svg
 e2e/                Playwright và kiểm tra accessibility
-.github/workflows/  CI và deploy Pages thủ công
+.github/workflows/  CI và deploy Pages (tự động trên main)
 ```
 
 ## Tài liệu và tài nguyên
