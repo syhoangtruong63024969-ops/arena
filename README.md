@@ -98,13 +98,12 @@ Mã nguồn làm việc trên nhánh **`arena/01a07244-arena`** của repo này.
 
 ### GitHub Pages (tùy chọn)
 
-Đã có workflow thủ công `.github/workflows/pages.yml`. **Có workflow không có nghĩa website đã được public.** Để xuất bản:
+Đã có workflow `.github/workflows/pages.yml` (tự chạy khi đẩy vào `main`, hoặc chạy thủ công). **Có workflow không có nghĩa website đã được public.** Để xuất bản:
 
-1. Merge pull request để workflow nằm trên nhánh mặc định `main`.
-2. Vào **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Nếu cần, đặt các biến cấu hình công khai tại **Settings → Secrets and variables → Actions → Variables**. Không đặt API key ElevenLabs vào các biến Vite.
-4. Vào **Actions → Deploy Voicekey to GitHub Pages → Run workflow** trên `main`.
-5. Workflow build với `BASE_PATH=/arena/` và hiển thị URL website sau khi deploy thành công.
+1. Vào **Settings → Pages → Build and deployment → Source: GitHub Actions** (chỉ làm một lần).
+2. Nếu cần, đặt các biến cấu hình công khai tại **Settings → Secrets and variables → Actions → Variables**. Không đặt API key ElevenLabs vào các biến Vite.
+3. Merge pull request vào `main` — workflow tự động build và deploy; hoặc vào **Actions → Deploy Voicekey to GitHub Pages → Run workflow** trên `main`.
+4. Workflow build với `BASE_PATH=/arena/` và hiển thị URL website sau khi deploy thành công.
 
 GitHub Pages chỉ host frontend tĩnh; không chạy backend thanh toán/cấp key. Có thể triển khai thư mục `dist/` lên Vercel, Netlify hoặc static hosting khác với `BASE_PATH=/` cho tên miền gốc. Luôn dùng HTTPS để clipboard và các tính năng trình duyệt hoạt động phù hợp.
 
@@ -122,7 +121,7 @@ public/
   images/           Minh họa sóng âm WebP
   favicon.svg
 e2e/                Playwright và kiểm tra accessibility
-.github/workflows/  CI và deploy Pages thủ công
+.github/workflows/  CI và deploy Pages (tự động trên main)
 ```
 
 ## Tài liệu và tài nguyên

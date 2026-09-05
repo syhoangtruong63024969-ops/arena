@@ -1,8 +1,10 @@
 name: Deploy Voicekey to GitHub Pages
 
-# Opt-in deployment only. Enable Settings → Pages → GitHub Actions first.
+# Enable Settings → Pages → Build and deployment → Source: GitHub Actions first.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
   contents: read
